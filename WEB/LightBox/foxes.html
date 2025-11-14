@@ -1,0 +1,201 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<header>
+    <!--SEO tags-->
+    <meta name="description" content="JQuery LightBox gallery example">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+
+    <title>Foxes of the world </title>
+
+    <link rel="stylesheet" href="css/lightBox.css"  media ="screen"/>
+
+    <style type ="text/css">
+        a image {
+            border: solid 6px black;
+        }
+
+        a:hover img {
+            border: solid 6px #c0c0c0;
+        }
+
+</style>
+</header>
+<body>
+    <h1>Foxes</h1>
+
+    <p> Here are the examples of the fox species from around the world.</p>
+    <a href="images/fox1.jpg" data-lightbox = "foxes" title = "Island fox by Kevin Schafer"><img src = "images/fox1s.jpg" alt = "Island fox by Kevin Schafer"/></a>
+    <a href="images/fox2.jpg" data-lightbox = "foxes" title = "Fennec fox pup by Tad Motoyama"><img src = "images/fox2s.jpg" alt = "Fennec fox pup by Tad Motoyama"/></a>
+    <a href="images/fox3.jpg" data-lightbox = "foxes" title = "Red fox by Bill Bunyan"><img src = "images/fox3s.jpg" alt = "Red fox by Bill Bunyan"/></a>
+    <a href="images/fox4.jpg" data-lightbox = "foxes" title = "Arctic fox by Ikkutut"><img src = "images/fox4s.jpg" alt = "Arctic fox by Ikkutut"/></a>
+    <a href="images/fox5.jpg" data-lightbox = "foxes" title = "Darwin fox by Bobbi Sinclair"><img src = "images/fox5s.jpg" alt = "Darwin fox by Bobbi Sinclair"/></a>
+
+    <script src = "js/jquery-1.10.2.min.js"></script>
+    <script src = "js/lightbox-2.6.min.js"></script>
+    <script src = "js/modernizer.custom.js"></script>
+
+
+</body>
+</html>
+
+
+
+import React from "react";
+import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
+
+
+export default function FirstAid() {
+  return (
+    <ScrollView style={styles.container}>
+
+      {/* Hero Section */}
+      <View style={styles.hero}>
+        <Text style={styles.heroTitle}>First Aid</Text>
+      </View>
+
+      <View style={styles.courseDetails}>
+        <View style={styles.courseContent}>
+          <View style={styles.column}>
+            <Text style={styles.sectionTitle}>Purpose</Text>
+            <Text style={styles.listItem}>• Provide first aid awareness and basic life support.</Text>
+          </View>
+
+          <View style={styles.column}>
+            <Text style={styles.sectionTitle}>Content</Text>
+            <Text style={styles.listItem}>• Wounds and bleeding</Text>
+            <Text style={styles.listItem}>• Burns and fractures</Text>
+            <Text style={styles.listItem}>• Emergency scene management</Text>
+            <Text style={styles.listItem}>• Cardio-Pulmonary Resuscitation (CPR)</Text>
+            <Text style={styles.listItem}>• Respiratory distress (e.g., choking or blocked airway)</Text>
+          </View>
+        </View>
+
+        <View style={styles.fees}>
+          <Text style={styles.feeText}>
+            <Text style={{ fontWeight: "bold" }}>Fees:</Text> R750
+          </Text>
+          <TouchableOpacity
+            style={styles.ctaButton}
+            onPress={() => navigation.navigate("Register")}
+          >
+            <Text style={styles.ctaText}>Enroll Now</Text>
+          </TouchableOpacity>
+        </View>
+
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>© 2025 Empowering The Nation. All Rights Reserved.</Text>
+      </View>
+    </ScrollView>
+  );
+};
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  navbar: {
+    backgroundColor: "#2b6e3f",
+    paddingVertical: 15,
+    paddingHorizontal: 10,
+  },
+  logoContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  logo: {
+    width: 50,
+    height: 50,
+    resizeMode: "contain",
+    marginRight: 10,
+  },
+  title: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  navLinks: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+  },
+  navLink: {
+    color: "#fff",
+    marginVertical: 4,
+    fontSize: 14,
+  },
+  hero: {
+    backgroundColor: "#e9f5ee",
+    padding: 20,
+    alignItems: "center",
+  },
+  heroTitle: {
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#2b6e3f",
+    marginBottom: 10,
+  },
+  heroText: {
+    fontSize: 16,
+    color: "#333",
+    textAlign: "center",
+  },
+  courseDetails: {
+    padding: 20,
+  },
+  courseContent: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  column: {
+    flex: 1,
+    marginHorizontal: 10,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: "#2b6e3f",
+  },
+  listItem: {
+    fontSize: 14,
+    marginVertical: 4,
+    color: "#444",
+  },
+  fees: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  feeText: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  ctaButton: {
+    backgroundColor: "#2b6e3f",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  ctaText: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  relatedLink: {
+    marginTop: 20,
+    color: "#2b6e3f",
+    textAlign: "center",
+    textDecorationLine: "underline",
+  },
+  footer: {
+    backgroundColor: "#2b6e3f",
+    padding: 15,
+    alignItems: "center",
+    marginTop: 30,
+  },
+  footerText: {
+    color: "#fff",
+    fontSize: 12,
+  },
+});

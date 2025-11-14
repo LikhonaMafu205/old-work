@@ -1,0 +1,149 @@
+@media screen and (min-width: 768px){
+    body{
+        background-color:white;
+    }
+    
+    h1{
+        color: blue;
+        border:  solid 2px gray;
+        border-radius: 2px 
+    }
+    
+    h2{
+        color: purple;
+        border-bottom: dotted 3px black;
+    }
+    
+    p{
+        color: #ff0000;
+    }
+    .myBoxStyle{
+        width: 100%;
+        height: 50%;
+        border:5px solid black;
+        background: red;
+    }
+    .textHighlightStyle{
+        background: aqua;
+    }
+    
+    .boxHighlightStyle{
+        border: 5px dotted gray;
+        background-color: alicblue; 
+        border-radius: 8px;
+        padding: 225px;
+        margin: 30px;
+    }
+    
+    #idHighlight{
+        font-weight: bold;
+        color: blueviolet;
+        font-size: x-large;
+    }
+    .floatImage{
+        float:inline-end;
+        width: 200px;
+        height: 300px;
+        border: 8px solid;
+        margin: 20px;
+    }
+    
+    .marginParagraph{
+        margin: 100px;
+    }
+    a{
+        color:aqua;
+    }
+    
+    a:visited{
+        color:blueviolet;
+    }
+    
+    a:hover{
+        color: pink;
+    }
+    
+    a:active{
+        color: yellow;
+    } 
+    
+    div:hover{
+        background-color: pink; 
+    }
+}
+
+
+ <!--
+ @media screen and (max-width: 768px){
+    body{
+        background-color:blue;
+    }
+    
+    h1{
+        color:  bblue;
+        border:  solid 2px gray;
+        border-radius: 2px 
+    }
+    
+    h2{
+        color: purple;
+        border-bottom: dotted 3px black;
+    }
+    
+    p{
+        color: #ff0000;
+    }
+    .myBoxStyle{
+        width: 100%;
+        height: 50%;
+        border:5px solid black;
+        background: red;
+    }
+    .textHighlightStyle{
+        background: aqua;
+    }
+    
+    .boxHighlightStyle{
+        border: 5px dotted gray;
+        background-color: alicblue; 
+        border-radius: 8px;
+        padding: 225px;
+        margin: 30px;
+    }
+    
+    #idHighlight{
+        font-weight: bold;
+        color: blueviolet;
+        font-size: x-large;
+    }
+    .floatImage{
+        float:right;
+        width: 100px;
+        height: 100px;
+        border: 8px solid;
+        margin: 20px;
+    }
+    
+    .marginParagraph{
+        margin: 100px;
+    }
+    a{
+        color:aqua;
+    }
+    
+    a:visited{
+        color:blueviolet;
+    }
+    
+    a:hover{
+        color: pink;
+    }
+    
+    a:active{
+        color: yellow;
+    } 
+    
+    div:hover{
+        background-color: pink; 
+    }
+}

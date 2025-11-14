@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>First JavaScript Activity</title>
+
+<span>
+    <button id = "lightMode">Light Mode</button>
+    <button id = "darkMode">Dark Mode</button>
+    <button id = "discoMode">Start Disco</button>
+
+</span>
+
+<style>
+    body{
+        /* transition lets us change HOW something changes ( eg., ease will change it gently rather than atraight away)*/
+        transition: background-color 5s ease, color 5s ease;
+    }
+</style>
+
+</head>
+<body>
+ <marquee scrollamount = "5">
+    <h1> This is showing some basic JavaScript things we can do!</h1>
+ </marquee>  
+ 
+ <!--We give things an OD so that we can access them from our script-->
+ <p id = "randomText">
+    This is just a silly paragraph to show
+ </p>
+
+<button id = "translationButton">Click me to turn this text into Hieroglyphics</button>
+
+<!--We call the script at the end of the body, so that everything else on the website is created first this is so that the
+ code in the javascript doesm't tyr and touch something before it exists-->
+<script src="js/script.js"></script>
+</body>
+<footer>
+    
+</footer>
+</html>

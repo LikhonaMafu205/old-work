@@ -1,0 +1,77 @@
+<DocType html>
+<html>
+    <head>
+        <title> Example Form</title>
+    </head>
+
+    <body>
+    <!--Forms-->
+    <!--action tells the sitee what to do when the form is complete-->
+    <!--mailto lets us email someone-->
+    <form action = "mailto:likhonamafu@gmail.com" method = "Post" enctype= "text/plain">
+            <!--label lets us tell the user what we want them to enter-->
+            <!--the for attribute tells the website which input to relate it to-->
+            <label for = "firstName">First Name: </label> <br>
+            <input typ = "text" id = "firstName" name = "firstName" required> <br>
+            <!--name and id should match the label "for", and the type is what we want the user to enter-->
+
+            <label for = "lastName"> Last Name:  </label> <br>
+            <input type = "text" id = "lastName" name = "lastName" required> <br>
+
+
+            <label for ="anoutMe"> Please tell me about yourself</label> <br>
+            <!--textArea gives a bigger box to type in. Remember that the id and name must be the same as the "for"-->
+            <textArea name = "aboutMe" id = "aboutMe"></textArea> <br>
+
+            <label for = "favouriteMovies"> What is youe favourite movie?</label> <br>
+            <select name = "favouriteMovies" id = "favouriteMovies"> 
+                <option value = "Barbie"> Barbie</option>
+                <option value = "KarateKid"> Karate Kid</option>
+                <option value = "campRock"> Camp Rock</option>
+                <option value = "cars"> Cars</option>
+                <option value = "madea"> Madea</option>
+                </select> <br>
+
+                <label for = "comingToClass"> Are you coming to class tomorrow?</label> <br> 
+                <!-- for a checkbox, we change "Type" for the input. There are multiple you can choose from-->
+                <input name = "comingYoClass" id = "comingToClass" type = "checkbox" value = "attending?" required> <br>
+
+                <label for = "favouriteSport"> What is your favourite sport</label> <br>
+                <!--when doingnradio buttons, all of the names need to be the same tp show that all the radio buttons are part of the
+                same group. Radio buttons need their own labels-->
+
+                <input type = "radio" name = "favouriteSport" value = "soccer">
+                <label> Soccer</label> <br>
+
+                <input type = "radio" name = "favouriteSport" value = "swimming">
+                <label> Swimming</label> <br>
+
+                <input type = "radio" name = "favouriteSport" value = "rugny">
+                <label> Rugby</label> <br>
+
+                <input type = "radio" name = "favouriteSport" value = "hockey">
+                <label> Hockey</label> <br>
+
+                <label for = "secretCode"> Please enter the secret code</label> <br>
+                <!--when using type = password, whatever the user enters is hidden from view-->
+                <input type = "password"  id = "secretCode" name = "secretCode"> <br>
+
+                <label for = "birthDate"> When were you born?</label> <br>
+                <!-- datetime-local makes it easy for the user to select a date, and we dont have to worry
+                 about formarring issues-->
+                <input type = " datetime-local" id = "birthDate" name = "birthDate"> <br>
+
+                <label for = "favouriteColour"> What is your favourite color?</label> <br>
+                <input type  ="color" id = "favouriteColour" name = "favouriteColour"> <br> <br>
+
+                <input type = "submit" value = "submit">
+
+                <input type = "reset" value = "clear">
+
+
+        </form>
+    </body>
+    <footer>
+        
+    </footer>
+</html>
