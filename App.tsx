@@ -1,59 +1,75 @@
 import { StatusBar } from 'expo-status-bar';
-// never forget the required imports :)
-import { StyleSheet, Text, TextInput, View,Button, ListRenderItem, } from 'react-native';
-import {useState} from 'react';
-import React from 'react';
-import Flatlist from'react';
+import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+// we don't use nativeStackNavigator here, because we are using the bottom tab to handle moving between pages
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+// for icons for our bottom tab
+import Ionicons from "react-native-vector-icons/Ionicons";
 
+//define what icons we want on our navigation bar
+type RootTabParamList = {
+  Home: undefined;
+  SecondScreen : undefined;
+};
+// think of this like "Stack" from when we did StackNavigator
+const Tab = createBottomTabNavigator<RootTabParamList>();
 
-// defining custom data
-type StoreItem= {
-  id: String,// id helps diffrentiate
-
-  name: String,
-  price: String
-}
-
-export default function App() {
-  const [itemName, setItemName] = useState('');
-  const [itemPrice, setItemPrice] = useState('');
-  var [catalogue, setCatalogue] = useState<StoreItem[]>([
-    {id:"1" , name:"Bread", price:"R12"},// the comma meaans there is another item
-    {id:"2" , name:"Butter", price:"R18"}
-  ]);
-
-  // a method has a name = (a list of what it was) => {a set of instructions}
-  // onPress = {() => {}}
-  const addNewItem = (name:String, price:String) => {
-
-  }
-
-  const renderItem: ListRenderItem<StoreItem> = ({item}) => (
-    <View style={styles.listItem}>
-      <Text style={styles.itemText}>Name: {item.name}, Price: {item.price}</Text>
-    </View>
-  );
-
+ function HomeScreen () {
   return (
     <View style={styles.container}>
-      <Text>Welcome to Store(tm)!</Text>
-      {/* the usual, we get text from the user, and update the variable*/}
-      <TextInput placeholder='Please enter an item name '/>
-      onChangeText={(newText) => setItemName(newText)} />
-      {/* we do it again for price*/}
-      <TextInput placeholder='Please enter an item price'/>
-      {/* for the button, we cal the new method we created earlier and the variable */}
-      <Button title='Add new item to catalogue'
-      onPress ={() => addNewItem(itemName,itemPrice)}/>
-      {/* flatlist to display all our shops items!*/}
-      <Flatlist>
-data = {catalogue}
-renderItem={renderItem}
-keyExtractor={ite => itemName.indexOf.toString()}
-</Flatlist>
-     
+      <Text>Welcome to the Home Screen</Text>
       <StatusBar style="auto" />
     </View>
+  );
+}
+
+
+ function SecondScreen () {
+  return (
+    <View style={styles.container}>
+      <Text>Welcome to the Second Screen</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+
+
+
+
+export default function App() {
+  return (
+    //
+    <NavigationContainer>
+    {/*this time wwe use Tab instead of Stack, because of our BottomTabNavigation (not using nativeStackNavigator)*/}
+      <Tab.Navigator
+      /* screenOptions allows us to set up HOW to route between screens*/
+       screenOptions={({route}) => ({
+       /*here we are setting up how to handle changing the icon as we move between screens*/
+        tabBarIcon: ({focused, color, size}) => {
+        let iconName: String;
+
+        if (route.name === 'Home'){
+        /* IF home is the selected (focused) screen, set the icon to 'home'(coloured in icon) 
+        ELSE if it is not the selected one (: seperates if and else), set it to an outlined versiom 'hpme-outlined'*/
+        iconName = focused? "home" : "home-outline";
+                  }else if (route.name === "SecondScreen") {
+                    iconName = focused ? "settings" : "settings-outline";
+                  }
+                  return <Ionicons name={iconName} size={size} color={color}/>
+    },
+    /* ActiveTint - Selected Item Highlight Colour
+    InactiveTint - Non-selected item Highlight Colour*/ 
+    tabBarActiveTintColor: 'tomato',
+    tabBarInactiveTintColor: 'gray',
+headerShown: false 
+  })}
+  > 
+  <Tab.Screen name = 'Home' component={HomeScreen}/>
+  <Tab.Screen name='SecondScreen' component={SecondScreen}/>
+  
+  </Tab.Navigator>
+</NavigationContainer>
+    
   );
 }
 
@@ -64,16 +80,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  listItem:{
-    //padding gives each item some persinal space, so they aren't so bunched up
-    padding:20,
-    backgroundColor: #782929ff
-    borderRadius: 8
-  },
-  itemText: {
-    color: #fff
-  },
-  itemSeperator: {
-    height: 20
-  }
 });
